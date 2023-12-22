@@ -1,0 +1,13 @@
+INFO - 2023-11-27 05:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-27 05:49:08 --> Undefined array key "nama"
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')

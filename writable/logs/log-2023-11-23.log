@@ -1,0 +1,2200 @@
+ERROR - 2023-11-23 06:30:07 --> mysqli_sql_exception: Duplicate entry '1' for key 'PRIMARY' in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ri...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ri...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ri...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ri...', Array, false)
+#4 D:\CI4\Posyandu\app\Database\Seeds\riwayatSeeder.php(23): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 D:\CI4\Posyandu\system\Database\Seeder.php(146): App\Database\Seeds\riwayatSeeder->run()
+#6 D:\CI4\Posyandu\system\Commands\Database\Seed.php(77): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 D:\CI4\Posyandu\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 D:\CI4\Posyandu\system\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 D:\CI4\Posyandu\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2023-11-23 06:45:29 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:45:29 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:48:14 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:48:14 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:48:15 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:48:15 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:48:45 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:48:45 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:48:47 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:48:47 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:48:51 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:48:51 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:52:32 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:52:32 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:52:34 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:52:34 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:52:34 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:52:34 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:52:34 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:52:34 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:52:35 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:52:35 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:52:45 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:52:45 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:52:45 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:52:45 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:52:46 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:52:46 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:54:02 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:54:02 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:58:01 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:58:01 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:58:02 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:58:02 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 06:58:19 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 06:58:19 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:13:16 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:13:16 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:13:20 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:13:20 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:25:04 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:25:04 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:25:06 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:25:06 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:26:49 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:26:49 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:33:10 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:33:10 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:34:09 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:34:09 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:40:34 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:40:34 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:40:35 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:40:35 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:40:36 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:40:36 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:40:36 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:40:36 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:40:36 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:40:36 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:40:37 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:40:37 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:43:01 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:43:01 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:50:41 --> mysqli_sql_exception: Duplicate entry '1' for key 'PRIMARY' in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ri...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ri...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ri...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ri...', Array, false)
+#4 D:\CI4\Posyandu\app\Database\Seeds\riwayatSeeder.php(23): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 D:\CI4\Posyandu\system\Database\Seeder.php(146): App\Database\Seeds\riwayatSeeder->run()
+#6 D:\CI4\Posyandu\system\Commands\Database\Seed.php(77): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 D:\CI4\Posyandu\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 D:\CI4\Posyandu\system\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 D:\CI4\Posyandu\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2023-11-23 07:54:51 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:54:51 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 07:56:47 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 07:56:47 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` != :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:14:26 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:14:26 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:14:27 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:14:27 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:14:28 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:14:28 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:14:42 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:14:42 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 08:18:03 --> Undefined variable $nama_bapak
+in APPPATH\Models\PosyanduModel.php on line 20.
+ 1 APPPATH\Models\PosyanduModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nama_bapak', 'D:\\CI4\\Posyandu\\app\\Models\\PosyanduModel.php', 20)
+ 2 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 08:18:13 --> Undefined variable $nama_bapak
+in APPPATH\Models\PosyanduModel.php on line 20.
+ 1 APPPATH\Models\PosyanduModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nama_bapak', 'D:\\CI4\\Posyandu\\app\\Models\\PosyanduModel.php', 20)
+ 2 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:18:46 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:18:46 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:18:48 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:18:48 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:18:48 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:18:48 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:18:48 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:18:48 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:18:48 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:18:48 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:18:49 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:18:49 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:18:49 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:18:49 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:18:49 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:18:49 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:19:14 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:19:14 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:19:16 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:19:16 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:19:16 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:19:16 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:19:17 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:19:17 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:19:17 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:19:17 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:19:23 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:19:23 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`nama_bapak` = `pasien`.`nama_bapak`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:22:41 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:22:41 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:26:09 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:26:09 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:26:12 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:26:12 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:27:20 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:27:20 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:28:30 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:28:30 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:31:55 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:31:55 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:31:55 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:31:55 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:31:56 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:31:56 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:31:56 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:31:56 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:31:56 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:31:56 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 08:38:51 --> Undefined property: stdClass::$tgl_periksa
+in APPPATH\Views\html\detail.php on line 30.
+ 1 APPPATH\Views\html\detail.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$tgl_periksa', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 08:40:35 --> Undefined property: stdClass::$tgl_periksa
+in APPPATH\Views\html\detail.php on line 30.
+ 1 APPPATH\Views\html\detail.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$tgl_periksa', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Zaki')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 08:49:07 --> Undefined property: stdClass::$tgl_periksa
+in APPPATH\Views\html\detail.php on line 30.
+ 1 APPPATH\Views\html\detail.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$tgl_periksa', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Zaki')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+INFO - 2023-11-23 08:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-11-23 08:51:46 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:51:46 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+INFO - 2023-11-23 08:53:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 08:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 08:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 08:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-11-23 08:54:16 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Juha')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Juha')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:54:16 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Juha')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Juha')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+INFO - 2023-11-23 08:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-11-23 08:57:07 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:57:07 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+ERROR - 2023-11-23 08:59:10 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 08:59:10 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+INFO - 2023-11-23 09:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 09:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 09:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 09:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 09:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-11-23 09:04:26 --> mysqli_sql_exception: Column 'id_pasien' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 09:04:26 --> Column 'id_pasien' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `id_pasien` = :id_pasien:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('1')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+INFO - 2023-11-23 09:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 09:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-11-23 09:06:25 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 09:06:25 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+INFO - 2023-11-23 09:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-11-23 09:07:21 --> mysqli_sql_exception: Column 'nama_bapak' in where clause is ambiguous in D:\CI4\Posyandu\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\CI4\Posyandu\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\CI4\Posyandu\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\CI4\Posyandu\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\CI4\Posyandu\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\CI4\Posyandu\app\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\CI4\Posyandu\app\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+#6 D:\CI4\Posyandu\system\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+#7 D:\CI4\Posyandu\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+#8 D:\CI4\Posyandu\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\CI4\Posyandu\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\CI4\Posyandu\system\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu...')
+#11 {main}
+CRITICAL - 2023-11-23 09:07:21 --> Column 'nama_bapak' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasien`
+JOIN `riwayat` ON `riwayat`.`id_pasien` = `pasien`.`id_pasien`
+WHERE `nama_bapak` = :nama_bapak:', [...], false)
+ 2 APPPATH\Models\PosyanduModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Posyandu.php(32): App\Models\PosyanduModel->getPasien('Jamal')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('Jamal')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+INFO - 2023-11-23 09:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 10:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-23 10:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-23 10:24:59 --> Attempt to read property "nama" on array
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama" on array', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:27:34 --> Undefined array key "nama"
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:27:35 --> Undefined array key "nama"
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:37:25 --> Attempt to read property "tgl_periksa" on string
+in APPPATH\Views\html\detail.php on line 23.
+ 1 APPPATH\Views\html\detail.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "tgl_periksa" on string', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 23)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:37:26 --> Attempt to read property "tgl_periksa" on string
+in APPPATH\Views\html\detail.php on line 23.
+ 1 APPPATH\Views\html\detail.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "tgl_periksa" on string', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 23)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:37:26 --> Attempt to read property "tgl_periksa" on string
+in APPPATH\Views\html\detail.php on line 23.
+ 1 APPPATH\Views\html\detail.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "tgl_periksa" on string', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 23)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:37:27 --> Attempt to read property "tgl_periksa" on string
+in APPPATH\Views\html\detail.php on line 23.
+ 1 APPPATH\Views\html\detail.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "tgl_periksa" on string', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 23)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:37:50 --> Attempt to read property "nama" on array
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama" on array', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:37:59 --> Attempt to read property "tgl_periksa" on string
+in APPPATH\Views\html\detail.php on line 23.
+ 1 APPPATH\Views\html\detail.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "tgl_periksa" on string', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 23)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:57:05 --> Attempt to read property "nama" on array
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama" on array', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:57:08 --> Attempt to read property "nama" on array
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama" on array', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:57:23 --> Array to string conversion
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:57:25 --> Array to string conversion
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:57:41 --> Attempt to read property "nama" on array
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama" on array', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:57:42 --> Attempt to read property "nama" on array
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama" on array', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:58:29 --> Undefined array key "nama"
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:58:31 --> Undefined array key "nama"
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 10:58:31 --> Undefined array key "nama"
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(39): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 11:07:22 --> Undefined variable $pasieni
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pasieni', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(48): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
+CRITICAL - 2023-11-23 11:07:23 --> Undefined variable $pasieni
+in APPPATH\Views\html\detail.php on line 7.
+ 1 APPPATH\Views\html\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pasieni', 'D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\CI4\\Posyandu\\app\\Views\\html\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('html/detail', [], true)
+ 5 APPPATH\Controllers\Posyandu.php(48): view('html/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Posyandu->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Posyandu))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\CI4\\Posyandu\\public\\index.php')
